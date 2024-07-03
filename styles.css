@@ -1,0 +1,219 @@
+/* General Styles */
+* {
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    margin: 0;
+}
+
+header.topnav {
+    background-color: #082567;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header.topnav .logo-container {
+    display: flex;
+    align-items: center;
+}
+
+header.topnav .round-image {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    /* object-fit: cover; */
+    margin-right: 10px;
+}
+
+header.topnav .logo-container p {
+    color: white;
+    margin: 0;
+   
+}
+
+header.topnav .menu {
+    display: flex;
+}
+
+header.topnav .menu a {
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+    border: 2px solid white; /* Add border to the navigation links */
+    margin-right: 5px; /* Add space between links */
+    border-radius: 4px; /* Optional: Add rounded corners */
+}
+
+header.topnav .menu a:hover {
+    background-color: #ddd;
+    color: black;
+    border: 2px solid black; /* Change border color on hover */
+}
+
+header.topnav .hamburger {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+    color: white;
+}
+
+footer.footer {
+    background-color: #082567;
+    padding: 20px;
+    text-align: center;
+}
+
+footer.footer #map {
+    width: 100%;
+    height: 30px;
+}
+
+main {
+    padding: 20px;
+}
+
+section {
+    padding: 80px 0 20px; /* Add top padding to account for the fixed header */
+    border-bottom: 1px solid #ddd;
+}
+
+.section:target::before {
+    content: "";
+    display: block;
+    height: 80px; /* Height of your header */
+    margin: -80px 0 0; /* Negate the height of the header */
+}
+
+/* Back to Top Button */
+#backToTopBtn {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    z-index: 0;
+    font-size: 16px;
+    border: none;
+    outline: none;
+    background-color: #082567;
+    color: white;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 4px;
+    width: 50px;
+    height: 50px;
+}
+
+#backToTopBtn:hover {
+    background-color: #555;
+}
+
+/* Media queries for responsiveness */
+@media screen and (max-width: 768px) {
+    header.topnav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    header.topnav .menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        text-align: left;
+    }
+
+    header.topnav .menu.show {
+        display: flex;
+    }
+
+    header.topnav .hamburger {
+        display: block;
+    }
+
+    header.topnav .menu a {
+        width: 100%;
+        padding: 10px;
+        font-size: 14px; /* Smaller font size for mobile */
+        margin: 2px 0; /* Smaller margin between links */
+    }
+
+    section {
+        padding: 100px 0 20px; /* Increase padding for mobile view */
+    }
+
+    .section:target::before {
+        height: 100px; /* Increase height for mobile view */
+        margin: -100px 0 0; /* Adjust margin for mobile view */
+    }
+}
+/* Footer Styles */
+.footer {
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 200px;
+    margin: 10px;
+}
+
+.footer-section h3 {
+    margin-bottom: 15px;
+    font-size: 18px;
+    text-transform: uppercase;
+}
+
+.footer-section p, .footer-section ul, .footer-section a {
+    font-size: 14px;
+    color: #ffffff;
+    text-decoration: none;
+    margin: 5px 0;
+}
+
+.footer-section ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin: 5px 0;
+}
+
+.footer-section a:hover {
+    text-decoration: underline;
+}
+
+.footer-bottom {
+    border-top: 1px solid #555;
+    padding-top: 10px;
+    font-size: 12px;
+}
+
+@media screen and (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        text-align: left;
+    }
+
+    .footer-section {
+        margin-bottom: 20px;
+    }
+}
